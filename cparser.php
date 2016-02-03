@@ -14,11 +14,11 @@
  * Please see the corresponding license file for details of these licenses.
  * You are free to use, modify and distribute this software, but all copyright information must remain.
  *
- * @package    	image CRUD
- * @copyright  	Copyright (c) 2011 through 2012, John Skoumbourdis
+ * @package    	CParser
+ * @copyright  	Copyright (C) 2011 through 2015  Dima Korobka
  * @license    	https://github.com/korobkadima/cparser
- * @version    	0.5
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @version    	0.1
+ * @author     	Dima Korobka <korobka.dima@gmail.com>
  */
  
 class CParser
