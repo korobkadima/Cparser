@@ -1,4 +1,4 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+п»ї<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * CParser
@@ -33,7 +33,6 @@ class CParser
 	protected $url = '';
 	protected $tags = '';
 	
-//	private $html;
 	
 	function __construct() 
 	{
@@ -66,7 +65,7 @@ class CParser
 	{
 		if(!is_array($pattern))
 		{
-			throw new Exception('Паттерны переданы не массивом или не верно');
+			throw new Exception('РџР°С‚С‚РµСЂРЅС‹ РїРµСЂРµРґР°РЅС‹ РЅРµ РјР°СЃСЃРёРІРѕРј РёР»Рё РЅРµ РІРµСЂРЅРѕ');
 		}
 		
 		foreach($pattern as $key => $val)
@@ -81,7 +80,7 @@ class CParser
 	
 		if ( ! $this->html)
 		{
-			throw new Exception('Сайт не отдал информацию... или Не работает file_get_contents');
+			throw new Exception('РЎР°Р№С‚ РЅРµ РѕС‚РґР°Р» РёРЅС„РѕСЂРјР°С†РёСЋ... РёР»Рё РќРµ СЂР°Р±РѕС‚Р°РµС‚ file_get_contents');
 		}
 		
 		return $this->html;
@@ -95,12 +94,12 @@ class CParser
 			
 		if(!is_array($this->pattern))
 		{
-			throw new Exception('Паттерны переданы не массивом или не верно'); 
+			throw new Exception('РџР°С‚С‚РµСЂРЅС‹ РїРµСЂРµРґР°РЅС‹ РЅРµ РјР°СЃСЃРёРІРѕРј РёР»Рё РЅРµ РІРµСЂРЅРѕ'); 
 		} 
 		
 		if(count($this->pattern) == 0)
 		{
-			throw new Exception('Паттерны не установлены'); 
+			throw new Exception('РџР°С‚С‚РµСЂРЅС‹ РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹'); 
 		} 
 		
 		foreach($this->pattern as $key => $val)
@@ -112,13 +111,13 @@ class CParser
 		{
 			if(isset($val[1]))
 			{
-				#чистим лишние теге
+				#С‡РёСЃС‚РёРј Р»РёС€РЅРёРµ С‚РµРіРµ
 				if(isset($this->tags))
 				{
 					$val[1] = strip_tags($val[1],$this->tags);
 				}
 				
-				# чистим лишние пробелы
+				# С‡РёСЃС‚РёРј Р»РёС€РЅРёРµ РїСЂРѕР±РµР»С‹
 				$val[1] = preg_replace('#\n\t\s#',"",$val[1]);
 				$val[1] = preg_replace('/\s{2,}/'," ",$val[1]);
 			
@@ -137,12 +136,12 @@ class CParser
 			
 		if(!is_array($this->pattern))
 		{
-			throw new Exception('Паттерны переданы не массивом или не верно'); 
+			throw new Exception('РџР°С‚С‚РµСЂРЅС‹ РїРµСЂРµРґР°РЅС‹ РЅРµ РјР°СЃСЃРёРІРѕРј РёР»Рё РЅРµ РІРµСЂРЅРѕ'); 
 		} 
 		
 		if(count($this->pattern) == 0)
 		{
-			throw new Exception('Паттерны не установлены'); 
+			throw new Exception('РџР°С‚С‚РµСЂРЅС‹ РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹'); 
 		} 
 		
 		foreach($this->pattern as $key => $val)
@@ -156,13 +155,13 @@ class CParser
 			{
 				foreach($val[1] as $one)
 				{
-					#чистим лишние теге
+					#С‡РёСЃС‚РёРј Р»РёС€РЅРёРµ С‚РµРіРµ
 					if($this->tags)
 					{
 						$one = strip_tags($one,$this->tags);
 					}
 					
-					# чистим лишние пробелы
+					# С‡РёСЃС‚РёРј Р»РёС€РЅРёРµ РїСЂРѕР±РµР»С‹
 					$one = preg_replace('#\n\t\s#',"",$one);
 					$one = preg_replace('/\s{2,}/'," ",$one);
 				
